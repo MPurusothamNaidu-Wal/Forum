@@ -32,11 +32,11 @@ const ReducerForum = (state, action) => {
     }
     if (action.type == "delAll") {
         let modifiedState = state.filter((val, ind) => {
-            if (new Date().getFullYear() - new Date(val.time).getFullYear() >= 1) {
+            if (new Date().getFullYear() - action.year >= 1) {
                 return true;
-            } else if (new Date().getMonth() - new Date(val.time).getMonth() >= 1) {
+            } else if (new Date().getMonth() - action.month>= 1) {
                 return true;
-            } else if (new Date().getDay() - new Date(val.time).getDay() >= 1) {
+            } else if (new Date().getDay() - action.date >= 1) {
                 return true;
             } else if (new Date().getHours() - new Date(val.time).getHours() >= 1) {
                 return true;
